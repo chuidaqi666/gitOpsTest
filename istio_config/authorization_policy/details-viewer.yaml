@@ -11,6 +11,6 @@ spec:
 #    - from:
 #        - source:
 #            principals: ["productpage.default.svc.cluster.local"]
-      to:
+    - to:
         - operation:
             methods: ["GET"]
