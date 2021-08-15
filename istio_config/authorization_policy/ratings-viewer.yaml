@@ -1,0 +1,16 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "AuthorizationPolicy"
+metadata:
+  name: "ratings-viewer"
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: ratings
+  rules:
+#    - from:
+#        - source:
+#            principals: ["productpage.default.svc.cluster.local"]
+    - to:
+        - operation:
+            methods: ["GET"]
