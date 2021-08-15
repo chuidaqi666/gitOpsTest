@@ -1,0 +1,16 @@
+apiVersion: "security.istio.io/v1beta1"
+kind: "AuthorizationPolicy"
+metadata:
+  name: "details-viewer"
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: reviews
+  rules:
+#    - from:
+#        - source:
+#            principals: ["productpage.default.svc.cluster.local"]
+    - to:
+        - operation:
+            methods: ["GET"]
